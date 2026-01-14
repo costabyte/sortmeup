@@ -1,0 +1,13 @@
+{
+  "name": "sortmeup",
+  "version": "1.3.0",
+  "description": "A file sorting utility",
+  "main": "index.js",
+  "packageManager": "pnpm@10.28.0",
+  "dependencies": {
+    "exiftool-vendored": "^35.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}

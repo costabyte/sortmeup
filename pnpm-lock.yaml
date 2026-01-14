@@ -1,0 +1,86 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      exiftool-vendored:
+        specifier: ^35.0.0
+        version: 35.0.0
+    devDependencies:
+      prettier:
+        specifier: ^3.7.4
+        version: 3.7.4
+
+packages:
+
+  '@photostructure/tz-lookup@11.4.0':
+    resolution: {integrity: sha512-yrFaDbQQZVJIzpCTnoghWO8Rttu22Hg7/JkfP3CM8UKniXYzD80cuv4UAsFkzP5Z6XWceWNsQTqUJHKyGNXzLg==}
+
+  '@types/luxon@3.7.1':
+    resolution: {integrity: sha512-H3iskjFIAn5SlJU7OuxUmTEpebK6TKB8rxZShDslBMZJ5u9S//KM1sbdAisiSrqwLQncVjnpi2OK2J51h+4lsg==}
+
+  batch-cluster@17.0.0:
+    resolution: {integrity: sha512-YQAwRrZv0V51mAg56Re/+zpTeUwYPXHB2v6HUod6iCQbq8txbi2kmLJHzq83fatqyh3fHC8bBcIBpAS04Xig9A==}
+    engines: {node: '>=20'}
+
+  exiftool-vendored.exe@13.45.0:
+    resolution: {integrity: sha512-xa+gEnZ2Q9BAzaDr35xgADql+T6L92RqK0GjzOjzDuObwhr+sBr5RdySvZ3osHac9GJypxvk4cewNnj4OnPL3Q==}
+    os: [win32]
+
+  exiftool-vendored.pl@13.45.0:
+    resolution: {integrity: sha512-uA58bMcXqdSQAqsZbHa/SMU6XKXsmoMcJSlKJjsCmLlQKEThncuAlpg8wGVNhULNXxYmRXXnYQ1756UYQY9VIA==}
+    os: ['!win32']
+    hasBin: true
+
+  exiftool-vendored@35.0.0:
+    resolution: {integrity: sha512-pLhb0OMcMy4lTXMnm58DLNuGwHGJQT4Q8L4Vssk+Z99F4qJ60g8O6XPvyv2RKUUhB4iWtiFaoRPU+iqVZUCy7w==}
+    engines: {node: '>=20.0.0'}
+
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+
+  luxon@3.7.2:
+    resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
+    engines: {node: '>=12'}
+
+  prettier@3.7.4:
+    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+snapshots:
+
+  '@photostructure/tz-lookup@11.4.0': {}
+
+  '@types/luxon@3.7.1': {}
+
+  batch-cluster@17.0.0: {}
+
+  exiftool-vendored.exe@13.45.0:
+    optional: true
+
+  exiftool-vendored.pl@13.45.0:
+    optional: true
+
+  exiftool-vendored@35.0.0:
+    dependencies:
+      '@photostructure/tz-lookup': 11.4.0
+      '@types/luxon': 3.7.1
+      batch-cluster: 17.0.0
+      he: 1.2.0
+      luxon: 3.7.2
+    optionalDependencies:
+      exiftool-vendored.exe: 13.45.0
+      exiftool-vendored.pl: 13.45.0
+
+  he@1.2.0: {}
+
+  luxon@3.7.2: {}
+
+  prettier@3.7.4: {}
