@@ -73,9 +73,9 @@ class GalleryOrganizer {
     };
 
     this.dryRunStats = {
-      directoriesWouldCreate: new Set(),
-      filesWouldMove: [],
-      duplicatesWouldHandle: [],
+      directories: new Set(),
+      files: [],
+      duplicates: [],
       categorization: new Map(),
     };
 
@@ -123,8 +123,8 @@ class GalleryOrganizer {
     if (this.dryRun) {
       console.log('DRY RUN - No files were moved');
       console.log(`Files analyzed: ${this.stats.processed}`);
-      console.log(`Would move: ${this.dryRunStats.filesWouldMove.length} files`);
-      console.log(`Would create: ${this.dryRunStats.directoriesWouldCreate.size} directories`);
+      console.log(`Would move: ${this.dryRunStats.files.length} files`);
+      console.log(`Would create: ${this.dryRunStats.directories.size} directories`);
 
       if (this.dryRunStats.categorization.size > 0) {
         console.log('\nBy category:');
@@ -133,16 +133,16 @@ class GalleryOrganizer {
         }
       }
 
-      if (this.dryRunStats.filesWouldMove.length > 0) {
+      if (this.dryRunStats.files.length > 0) {
         console.log('\nSample moves:');
 
-        const samples = this.dryRunStats.filesWouldMove.slice(0, 5);
+        const samples = this.dryRunStats.files.slice(0, 5);
         samples.forEach(({ originalName, category, newName }) => {
           console.log(`  ${originalName} → ${category}/${newName}`);
         });
 
-        if (this.dryRunStats.filesWouldMove.length > 5) {
-          console.log(`  ... +${this.dryRunStats.filesWouldMove.length - 5} more`);
+        if (this.dryRunStats.files.length > 5) {
+          console.log(`  ... +${this.dryRunStats.files.length - 5} more`);
         }
       }
     } else {

@@ -90,8 +90,8 @@ class FileProcessor {
     const dest = path.join(dir, name);
 
     if (this.organizer.dryRun) {
-      this.organizer.dryRunStats.directoriesWouldCreate.add(dir);
-      this.organizer.dryRunStats.filesWouldMove.push({
+      this.organizer.dryRunStats.directories.add(dir);
+      this.organizer.dryRunStats.files.push({
         source: file,
         target: dest,
         category: 'Failed',
@@ -144,7 +144,7 @@ class FileProcessor {
   async recordDryRun(src, target, data) {
     const cat = this.getCategory(data);
 
-    this.organizer.dryRunStats.filesWouldMove.push({
+    this.organizer.dryRunStats.files.push({
       source: src,
       target,
       category: cat,
@@ -152,12 +152,12 @@ class FileProcessor {
       newName: path.basename(target),
     });
 
-    this.organizer.dryRunStats.directoriesWouldCreate.add(path.dirname(target));
+    this.organizer.dryRunStats.directories.add(path.dirname(target));
     this.organizer.dryRunStats.categorization.set(cat, (this.organizer.dryRunStats.categorization.get(cat) || 0) + 1);
 
     if (await this.doesFileExist(target)) {
       this.organizer.stats.duplicates++;
-      this.organizer.dryRunStats.duplicatesWouldHandle.push({ source: src, target, strategy: this.organizer.strategy });
+      this.organizer.dryRunStats.duplicates.push({ source: src, target, strategy: this.organizer.strategy });
     }
   }
 
