@@ -1,0 +1,103 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      exiftool-vendored:
+        specifier: ^35.2.0
+        version: 35.2.0
+      p-limit:
+        specifier: ^7.2.0
+        version: 7.2.0
+    devDependencies:
+      prettier:
+        specifier: ^3.8.0
+        version: 3.8.0
+
+packages:
+
+  '@photostructure/tz-lookup@11.4.0':
+    resolution: {integrity: sha512-yrFaDbQQZVJIzpCTnoghWO8Rttu22Hg7/JkfP3CM8UKniXYzD80cuv4UAsFkzP5Z6XWceWNsQTqUJHKyGNXzLg==}
+
+  '@types/luxon@3.7.1':
+    resolution: {integrity: sha512-H3iskjFIAn5SlJU7OuxUmTEpebK6TKB8rxZShDslBMZJ5u9S//KM1sbdAisiSrqwLQncVjnpi2OK2J51h+4lsg==}
+
+  batch-cluster@17.1.0:
+    resolution: {integrity: sha512-hLo0+9mlZEvoLdiqffTehuMvUnIBpngt4ORpoYoE77qN/98ay3NnpZqGgmPUMw+x/U/Jz6PUfeDhG+nZ6Ak3CA==}
+    engines: {node: '>=20'}
+
+  exiftool-vendored.exe@13.45.0:
+    resolution: {integrity: sha512-xa+gEnZ2Q9BAzaDr35xgADql+T6L92RqK0GjzOjzDuObwhr+sBr5RdySvZ3osHac9GJypxvk4cewNnj4OnPL3Q==}
+    os: [win32]
+
+  exiftool-vendored.pl@13.45.0:
+    resolution: {integrity: sha512-uA58bMcXqdSQAqsZbHa/SMU6XKXsmoMcJSlKJjsCmLlQKEThncuAlpg8wGVNhULNXxYmRXXnYQ1756UYQY9VIA==}
+    os: ['!win32']
+    hasBin: true
+
+  exiftool-vendored@35.2.0:
+    resolution: {integrity: sha512-NF1kEM7/VC2GJqvgOaZHN1/tH5QZ06NStlUEhCjn7YRuXH+uCjcE/dsuZLst0Xt9ErCpcK0f02mg6D+osL6RTg==}
+    engines: {node: '>=20.0.0'}
+
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+
+  luxon@3.7.2:
+    resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
+    engines: {node: '>=12'}
+
+  p-limit@7.2.0:
+    resolution: {integrity: sha512-ATHLtwoTNDloHRFFxFJdHnG6n2WUeFjaR8XQMFdKIv0xkXjrER8/iG9iu265jOM95zXHAfv9oTkqhrfbIzosrQ==}
+    engines: {node: '>=20'}
+
+  prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  yocto-queue@1.2.2:
+    resolution: {integrity: sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ==}
+    engines: {node: '>=12.20'}
+
+snapshots:
+
+  '@photostructure/tz-lookup@11.4.0': {}
+
+  '@types/luxon@3.7.1': {}
+
+  batch-cluster@17.1.0: {}
+
+  exiftool-vendored.exe@13.45.0:
+    optional: true
+
+  exiftool-vendored.pl@13.45.0:
+    optional: true
+
+  exiftool-vendored@35.2.0:
+    dependencies:
+      '@photostructure/tz-lookup': 11.4.0
+      '@types/luxon': 3.7.1
+      batch-cluster: 17.1.0
+      he: 1.2.0
+      luxon: 3.7.2
+    optionalDependencies:
+      exiftool-vendored.exe: 13.45.0
+      exiftool-vendored.pl: 13.45.0
+
+  he@1.2.0: {}
+
+  luxon@3.7.2: {}
+
+  p-limit@7.2.0:
+    dependencies:
+      yocto-queue: 1.2.2
+
+  prettier@3.8.0: {}
+
+  yocto-queue@1.2.2: {}
